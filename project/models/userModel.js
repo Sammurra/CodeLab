@@ -38,16 +38,16 @@ exports.getUser = user_id => new Promise((resolve, reject) => {
     })
 });
 
-exports.createComment = (userId, comment, articleId) => {
+exports.createComment = (userId, comment, articleId, rating ) => {
     return new Promise((resolve, reject) => {
         if (!comment) {
             reject(new Error('Comment is required')); // Reject if 'post' value is empty or null
         } else {
-            const sql = 'INSERT INTO comments (userId, comment, articleId) VALUES (?, ?, ?)';
-            db.config.query(sql, [userId, comment, articleId], (err, result) => {
+            const sql = 'INSERT INTO comments (userId, comment, articleId, rating) VALUES (?, ?, ?, ?)';
+            db.config.query(sql, [userId, comment, articleId, rating], (err, result) => {
                 if (err) {
                     const errorMessage = 'Error creating comment: ' + err.message;
-                    reject(new Error(errorMessage));
+                    reject(new Error(errorMessage)) ;
                 } else {
                     resolve(result);
                 }
@@ -77,8 +77,17 @@ exports.getCommentsForArticle = (articleId) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(result);
+                let percentage = getArticlePercentage(result)
+                resolve({result:result, percentage: percentage});
             }
         });
     });
 };
+
+function getArticlePercentage(ratings){
+    let stars = 0;
+    for (let i in ratings){
+        stars += ratings[i].rating
+    }
+    return stars/ratings.length *10
+}

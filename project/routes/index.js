@@ -55,8 +55,7 @@ router.route('/article/:id')
             const articleId = parseInt(req.params.id);
 
             const comments = await userModel.getCommentsForArticle(articleId); // Fetch comments for the specific article
-
-            res.render('article', { article: articles[articleId], comments: comments, articleId });
+            res.render('article', { article: articles[articleId], comments: comments.result, articleId:articleId, percentage: comments.percentage });
         } catch (error) {
             console.error(error);
             res.sendStatus(500);

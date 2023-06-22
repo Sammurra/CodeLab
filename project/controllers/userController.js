@@ -24,11 +24,11 @@ exports.register = (req, res) => {
 
 
 exports.createComment = (req, res) => {
-    const { comment, articleId } = req.body;
+    const { comment, articleId, rating} = req.body;
     const userId = req.user.id;
 
     console.log(JSON.stringify( { comment })+'idddddd')
-    userModel.createComment(userId, comment, articleId)
+    userModel.createComment(userId, comment, articleId, rating)
         .then(() => {
             res.redirect('/article/' + articleId);
         })

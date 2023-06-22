@@ -34,8 +34,8 @@
     <svg class="progressbar__svg">
         <circle cx="80" cy="80" r="40" class="progressbar__svg-circle circle-html shadow-html"> </circle>
     </svg>
-    <span class="progressbar__text shadow-html">94%</span>
-</div> </a>
+    <span class="progressbar__text shadow-html">    <%= percentage%>%   </span>
+</div>
 
 
 <div class="article">
@@ -82,11 +82,18 @@
 
 <div class="users">
     <% comments.forEach(function(comment) { %>
+          <div class="align">
+                <p class="commentuser"><%= comment.comment %></p>
+        <%for(let i =0 ; i< comment.rating; i ++) { %>
+            <div id="rating">
+                <label>★</label>
+            </div>
+        <% } %>
+          </div>
+        <% }); %>
 
-            <p class="commentuser"><%= comment.comment %></p>
-
-    <% }); %>
 </div>
+
 
 <div class="footer">
     <div class="footitems">Privacy Policy</div>
