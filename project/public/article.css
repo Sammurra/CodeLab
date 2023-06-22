@@ -252,7 +252,7 @@ a {
 
 @keyframes anim_circle-html {
     to {
-        stroke-dashoffset: 40;
+        stroke-dashoffset: 0;
     }
 }
 
@@ -437,4 +437,8 @@ h2 {
     padding-left: 20px;
     fill: green;
 
+}
+
+textarea {
+    padding-left: 20px;
 }

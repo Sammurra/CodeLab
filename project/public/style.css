@@ -273,7 +273,7 @@ img {
 
 @keyframes anim_circle-html {
     to {
-        stroke-dashoffset: 20;
+        stroke-dashoffset: 0;
     }
 }
 

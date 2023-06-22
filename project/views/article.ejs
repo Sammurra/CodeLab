@@ -34,7 +34,7 @@
     <svg class="progressbar__svg">
         <circle cx="80" cy="80" r="40" class="progressbar__svg-circle circle-html shadow-html"> </circle>
     </svg>
-    <span class="progressbar__text shadow-html">    <%= percentage%>%   </span>
+    <span class="progressbar__text shadow-html">    <%= percentage ? Math.ceil(percentage) + '%' : '0' %>%   </span>
 </div>
 
 
@@ -59,7 +59,7 @@
     <form action="/addComment" method="POST">
         <div class="comment">
             <input type="hidden" name="articleId" value="<%= articleId %>">
-            <textarea class="textcomment" name="comment" placeholder="   Want to write a comment?" required ></textarea>
+            <textarea class="textcomment" name="comment" placeholder="Want to write a comment?" required ></textarea>
             <div class="rating">
                 <input type="radio" name="rating" value="10" id="10" required /><label for="10">☆</label>
                 <input type="radio" name="rating" value="9" id="9" required /><label for="9">☆</label>
