@@ -24,14 +24,13 @@ exports.register = (req, res) => {
 
 
 exports.createComment = (req, res) => {
-    const { comment } = req.body;
-
-
+    const { comment, articleId } = req.body;
     const userId = req.user.id;
+
     console.log(JSON.stringify( { comment })+'idddddd')
-    userModel.createComment(userId, comment)
+    userModel.createComment(userId, comment, articleId)
         .then(() => {
-            res.redirect('/comments');
+            res.redirect('/article/' + articleId);
         })
         .catch(err => {
             console.log(err);
@@ -50,6 +49,9 @@ exports.getComments = async (req, res, next) => {
         next(error);
     }
 };
+
+
+
 
 exports.getUser = (req, res, next) => {
     // Cast to number as the id in token is a number and params are always strings

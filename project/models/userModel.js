@@ -38,13 +38,13 @@ exports.getUser = user_id => new Promise((resolve, reject) => {
     })
 });
 
-exports.createComment = (userId, comment) => {
+exports.createComment = (userId, comment, articleId) => {
     return new Promise((resolve, reject) => {
         if (!comment) {
             reject(new Error('Comment is required')); // Reject if 'post' value is empty or null
         } else {
-            const sql = 'INSERT INTO comments (userId, comment) VALUES (?, ?)';
-            db.config.query(sql, [userId, comment], (err, result) => {
+            const sql = 'INSERT INTO comments (userId, comment, articleId) VALUES (?, ?, ?)';
+            db.config.query(sql, [userId, comment, articleId], (err, result) => {
                 if (err) {
                     const errorMessage = 'Error creating comment: ' + err.message;
                     reject(new Error(errorMessage));
@@ -60,6 +60,20 @@ exports.getComments = () => {
     return new Promise((resolve, reject) => {
         const sql = 'SELECT * FROM comments';
         db.config.query(sql, (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};
+
+
+exports.getCommentsForArticle = (articleId) => {
+    return new Promise((resolve, reject) => {
+        const sql = 'SELECT * FROM comments WHERE articleId = ?';
+        db.config.query(sql, [articleId], (err, result) => {
             if (err) {
                 reject(err);
             } else {

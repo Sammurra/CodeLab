@@ -33,29 +33,37 @@ router.route('/')
         res.render('index', { articles });
     })
 
+/*
 router.route('/article')
     .get(authenticateJWT, async (req, res, next) => {
         try {
             const articles = await fetchNewsArticles(); // Fetch data from the API
-            res.render('article', { articles }); // Pass the fetched data to the article view
+            res.render('article', { newestArticle: articles[0] }); // Pass the first article to the article view
         } catch (error) {
             // Handle any errors that occur during API fetch
             console.error(error);
             res.sendStatus(500);
         }
     });
+*/
+
 
 router.route('/article/:id')
     .get(authenticateJWT, async (req, res, next) => {
         try {
             const articles = await fetchNewsArticles(); // Fetch data from the API
-            res.render('article', { articles:articles[req.params.id] }); // Pass the fetched data to the article view
+            const articleId = parseInt(req.params.id);
+
+            const comments = await userModel.getCommentsForArticle(articleId); // Fetch comments for the specific article
+
+            res.render('article', { article: articles[articleId], comments: comments, articleId });
         } catch (error) {
-            // Handle any errors that occur during API fetch
             console.error(error);
             res.sendStatus(500);
         }
     });
+
+
 
 router.get('/logout', (req, res) => {
     res.cookie('accessToken', '', {maxAge: 0});

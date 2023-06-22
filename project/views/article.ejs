@@ -10,7 +10,6 @@
 </head>
 
 <body>
-<% const newestArticle = articles; %>
 <nav>
     <div class="nav">
         <div class="navchild" ><a class="currentview" href="/">CurrentView</a></div>
@@ -41,63 +40,52 @@
 
 <div class="article">
     <div class="mainarticle">
-     <div class="headarticle"><%= newestArticle.title %>
-        <div class="property">
-    <div class="date"><%= newestArticle.publishedAt %></div>
-            <div class="agency"></div></div>
-    </div>
+        <div class="headarticle"><%= article.title %>
+            <div class="property">
+                <div class="date"><%= article.publishedAt %></div>
+                <div class="agency"></div>
+            </div>
+        </div>
 
-    <div class="imagearticle"> <img  src="<%= newestArticle.urlToImage %>" alt="image"> </div>
+        <div class="imagearticle"> <img src="<%= article.urlToImage %>" alt="image"> </div>
     </div>
-    <div class="textarticle"><%= newestArticle.description %>
-        <a href="<%= newestArticle.url %>" target="_blank">Read more</a>
+    <div class="textarticle"><%= article.description %>
+        <a href="<%= article.url %>" target="_blank">Read more</a>
     </div>
 </div>
+
 <h1>Leave a Comment</h1>
 <div class="commentsection">
     <form action="/addComment" method="POST">
         <div class="comment">
-
-            <input class="textcomment" name="comment" placeholder="Want to write a comment?" required />
-
-
+            <input type="hidden" name="articleId" value="<%= articleId %>">
+            <textarea class="textcomment" name="comment" placeholder="   Want to write a comment?" required ></textarea>
+            <div class="rating">
+                <input type="radio" name="rating" value="10" id="10" required /><label for="10">☆</label>
+                <input type="radio" name="rating" value="9" id="9" required /><label for="9">☆</label>
+                <input type="radio" name="rating" value="8" id="8" required /><label for="8">☆</label>
+                <input type="radio" name="rating" value="7" id="7" required /><label for="7">☆</label>
+                <input type="radio" name="rating" value="6" id="6" required /><label for="6">☆</label>
+                <input type="radio" name="rating" value="5" id="5" required /><label for="5">☆</label>
+                <input type="radio" name="rating" value="4" id="4" required /><label for="4">☆</label>
+                <input type="radio" name="rating" value="3" id="3" required /><label for="3">☆</label>
+                <input type="radio" name="rating" value="2" id="2" required /><label for="2">☆</label>
+                <input type="radio" name="rating" value="1" id="1" required /><label for="1">☆</label>
+            </div>
         </div>
+
         <button class="upload" type="submit">Submit</button>
     </form>
 </div>
+
 <h2>Comments</h2>
 
-<% comments.forEach((comment)=> { %>
-
-                <%= comment.comment %>
-
-<% }); %>
-
-
-
-
 <div class="users">
-    <div class="user">
-            <div class="userhead">
-                <h3 class="username">UserName</h3>
-                <h3 class="email">Email</h3>
-        </div>
-        <p class="commentuser">comment</p>
-    </div>
-    <div class="user">
-        <div class="userhead">
-            <h3 class="username">UserName</h3>
-            <h3 class="email">Email</h3>
-        </div>
-        <p class="commentuser">comment</p>
-    </div>
-    <div class="user">
-        <div class="userhead">
-            <h3 class="username">UserName</h3>
-            <h3 class="email">Email</h3>
-        </div>
-        <p class="commentuser">comment</p>
-    </div>
+    <% comments.forEach(function(comment) { %>
+
+            <p class="commentuser"><%= comment.comment %></p>
+
+    <% }); %>
 </div>
 
 <div class="footer">
