@@ -23,6 +23,10 @@ router.route('/login')
             })
     });
 
+router.post('/addComment',authenticateJWT, userController.createComment)
+router.get('/comments',authenticateJWT, userController.getComments)
+
+
 router.route('/')
     .get( async (req, res, next) => {
         const articles = await fetchNewsArticles();

@@ -55,26 +55,27 @@
 </div>
 <h1>Leave a Comment</h1>
 <div class="commentsection">
-    <form action="/comment" method="POST">
+    <form action="/addComment" method="POST">
         <div class="comment">
+
             <input class="textcomment" name="comment" placeholder="Want to write a comment?" required />
-            <div class="rating">
-                <input type="radio" name="rating" value="10" id="10" required /><label for="10">☆</label>
-                <input type="radio" name="rating" value="9" id="9" required /><label for="9">☆</label>
-                <input type="radio" name="rating" value="8" id="8" required /><label for="8">☆</label>
-                <input type="radio" name="rating" value="7" id="7" required /><label for="7">☆</label>
-                <input type="radio" name="rating" value="6" id="6" required /><label for="6">☆</label>
-                <input type="radio" name="rating" value="5" id="5" required /><label for="5">☆</label>
-                <input type="radio" name="rating" value="4" id="4" required /><label for="4">☆</label>
-                <input type="radio" name="rating" value="3" id="3" required /><label for="3">☆</label>
-                <input type="radio" name="rating" value="2" id="2" required /><label for="2">☆</label>
-                <input type="radio" name="rating" value="1" id="1" required /><label for="1">☆</label>
-            </div>
-            <button class="upload" type="submit">Submit</button>
+
+
         </div>
+        <button class="upload" type="submit">Submit</button>
     </form>
 </div>
 <h2>Comments</h2>
+
+<% comments.forEach((comment)=> { %>
+
+                <%= comment.comment %>
+
+<% }); %>
+
+
+
+
 <div class="users">
     <div class="user">
             <div class="userhead">
