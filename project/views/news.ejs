@@ -1,0 +1,38 @@
+<!-- news.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>News Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Latest News Articles</h1>
+<% articles.forEach((article) => { %>
+    <h2><%= article.title %></h2>
+     <img src="<%= article.urlToImage %>">
+    <p><%= article.publishedAt %></p>
+    <p><strong>Source:</strong> <%= article.source.name %></p>
+    <a href="<%= article.url %>" target="_blank">Read more</a>
+    <hr>
+<% }) %>
+</body>
+</html>

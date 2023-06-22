@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrentView</title>
+    <link rel="stylesheet" href="/article.css">
+</head>
+
+<body>
+<% const newestArticle = articles; %>
+<nav>
+    <div class="nav">
+        <div class="navchild" ><a class="currentview" href="/">CurrentView</a></div>
+        <div class="navchild">
+            <div class="navcontainer">
+                <div class="textandimg">
+                    <p class="textsearch">Search by topic</p>
+                    <img class="imgnav" src="/uploads/1024px-Search_Icon.svg.png" alt="Icon">
+                </div>
+            </div>
+        </div>
+        <div class="navchild">
+            <ul>
+                <li class="navtext">Why current view?</li>
+                <li><a href="./login"><button class="login">SIGN IN</button></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="progressbar">
+    <svg class="progressbar__svg">
+        <circle cx="80" cy="80" r="40" class="progressbar__svg-circle circle-html shadow-html"> </circle>
+    </svg>
+    <span class="progressbar__text shadow-html">94%</span>
+</div> </a>
+
+
+<div class="article">
+    <div class="mainarticle">
+     <div class="headarticle"><%= newestArticle.title %>
+        <div class="property">
+    <div class="date"><%= newestArticle.publishedAt %></div>
+            <div class="agency"></div></div>
+    </div>
+
+    <div class="imagearticle"> <img  src="<%= newestArticle.urlToImage %>" alt="image"> </div>
+    </div>
+    <div class="textarticle"><%= newestArticle.description %>
+        <a href="<%= newestArticle.url %>" target="_blank">Read more</a>
+    </div>
+</div>
+<h1>Leave a Comment</h1>
+<div class="commentsection">
+    <form action="/comment" method="POST">
+        <div class="comment">
+            <input class="textcomment" name="comment" placeholder="Want to write a comment?" required />
+            <div class="rating">
+                <input type="radio" name="rating" value="10" id="10" required /><label for="10">☆</label>
+                <input type="radio" name="rating" value="9" id="9" required /><label for="9">☆</label>
+                <input type="radio" name="rating" value="8" id="8" required /><label for="8">☆</label>
+                <input type="radio" name="rating" value="7" id="7" required /><label for="7">☆</label>
+                <input type="radio" name="rating" value="6" id="6" required /><label for="6">☆</label>
+                <input type="radio" name="rating" value="5" id="5" required /><label for="5">☆</label>
+                <input type="radio" name="rating" value="4" id="4" required /><label for="4">☆</label>
+                <input type="radio" name="rating" value="3" id="3" required /><label for="3">☆</label>
+                <input type="radio" name="rating" value="2" id="2" required /><label for="2">☆</label>
+                <input type="radio" name="rating" value="1" id="1" required /><label for="1">☆</label>
+            </div>
+            <button class="upload" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+<h2>Comments</h2>
+<div class="users">
+    <div class="user">
+            <div class="userhead">
+                <h3 class="username">UserName</h3>
+                <h3 class="email">Email</h3>
+        </div>
+        <p class="commentuser">comment</p>
+    </div>
+    <div class="user">
+        <div class="userhead">
+            <h3 class="username">UserName</h3>
+            <h3 class="email">Email</h3>
+        </div>
+        <p class="commentuser">comment</p>
+    </div>
+    <div class="user">
+        <div class="userhead">
+            <h3 class="username">UserName</h3>
+            <h3 class="email">Email</h3>
+        </div>
+        <p class="commentuser">comment</p>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footitems">Privacy Policy</div>
+    <div class="footitems">Terms of service</div>
+    <div class="footitems" id="lastitem">Personal Information</div>
+    <div class="footitems">Current View</div>
+</div>
+
+</body>
+
+</html>

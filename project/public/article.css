@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+
+}
+.nav {
+    display: flex;
+    padding: 10px 70px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.navchild > ul {
+    list-style: none;
+    display: flex;
+    gap:70px;
+
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.currentview {
+    font-size: 79px;
+    font-family: 'Share Tech Mono', monospace;
+    color: green;
+    font-weight: 400;
+}
+
+.navcontainer {
+    width: 700px;
+    height: 30px;
+    border-bottom: 3px solid green;
+    padding-bottom: 20px;
+
+}
+.textandimg {
+    display: flex;
+    justify-content: space-between;
+}
+.textsearch {
+    padding-left: 20px;
+    color: rgb(121, 121, 121);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+}
+.imgnav {
+    margin-top: 7px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.navtext {
+    align-self: center;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: green;
+}
+
+.login {
+
+    border: 2px solid green;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.login:hover {
+    background-color: green;
+    color: white;
+    transition: background-color 0.4s ease;
+}
+.topic {
+    font-size: 49px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: 400;
+    padding-left: 70px;
+}
+div.bigcontainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-top: 70px;
+
+
+}
+.main {
+    display: flex;
+    padding: 20px 70px 0;
+}
+
+.mainlabel {
+    padding-left: 40px;
+    width: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+
+}
+.maintext {
+    padding: 40px;
+    width: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+
+
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+h1 {
+    margin-left: 120px;
+    margin-bottom: 0;
+    font-size: 49px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: green;
+    font-weight: 400;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 32px;
+    justify-content: center;
+
+
+
+}
+.card {
+
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 350px;
+    border: 1px solid #eee;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+}
+
+.card:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s;
+}
+
+.card:hover::after {
+    width: 350px;
+    transition: transform 0.4s;
+}
+
+
+img {
+
+    border-radius: 10px;
+    width: 350px;
+    align-self: center;
+}
+.footer {
+    height: 72px;
+    background-color: black;
+
+    color: darkmagenta;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+.footitems {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+#lastitem {
+    margin-right: auto;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+
+}
+a {
+    color: green;
+}
+
+
+.progressbar {
+    position: absolute;
+    top: 470px;
+    left: 80px;
+    width: 170px;
+    height: 170px;
+    margin: 1em;
+    transform: rotate(-90deg);
+}
+
+.progressbar__svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progressbar__svg-circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+    stroke: white;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+.shadow-html {
+    filter: drop-shadow(0 0 5px #41ff33);
+}
+
+.circle-html {
+    -webkit-animation: anim_circle-html 1s ease-in-out forwards;
+    animation: anim_circle-html 1s ease-in-out forwards;
+}
+
+.progressbar__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.25em 0.5em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
+@keyframes anim_circle-html {
+    to {
+        stroke-dashoffset: 20;
+    }
+}
+
+
+.mainarticle {
+    margin: 120px;
+    flex-basis: 900px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+
+}
+.headarticle {
+
+    padding-left: 80px;
+    padding-top: 80px;
+    flex-basis: 200px;
+    font-size: 40px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.imagearticle {
+    flex-basis: 700px;
+    background: red;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+
+}
+.imagearticle > img {
+    flex: 1;
+    border-radius: 0 0 20px 20px;
+}
+
+
+ .textarticle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    margin: 0 120px;
+
+}
+ .property {
+     display: flex;
+     gap: 40px;
+     font-size: 22px;
+ }
+
+
+.commentsection {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment {
+    border-radius: 20px;
+    flex-basis: 400px;
+    background-color: #e5e5e5;
+    margin: 30px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+
+}
+
+.textcomment {
+    margin: 20px;
+    border-radius: 20px;
+    background-color: lightgray;
+    border: none;
+    flex-basis: 300px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.upload {
+    margin-left: 30px;
+    width: 200px;
+    border: 2px solid green;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 24px;
+    color: white;
+    background-color: green;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.upload:hover {
+    color: black;
+    background-color: white;
+    transition: 0.4s;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label {
+    position: relative;
+    width: 1.1em;
+    font-size: 2vw;
+    color: green;
+    cursor: pointer;
+}
+
+.rating > label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating > input:checked ~ label:before {
+    opacity: 1;
+    color: green;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+    opacity: 1;
+    color: #00bd00;
+}
+
+.rating > input:checked + label {
+    color: green;
+}
+h2 {
+    color: green;
+    padding-left: 120px;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+.users {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 120px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+}
+
+.user {
+    margin: 10px;
+    background-color: #D3D3D3FF;
+    border-radius: 10px;
+}
+.userhead {
+    display: flex;
+    gap: 20px;
+    padding-left: 40px;
+}
+.email {
+    color: #727272;
+}
+
+.commentuser {
+    padding-left: 10px;
+}

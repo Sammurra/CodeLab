@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrentView</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+ <body>
+    <nav>
+        <div class="nav">
+            <div class="navchild" ><a class="currentview" href="/">CurrentView</a></div>
+            <div class="navchild">
+                <div class="navcontainer">
+                    <div class="textandimg">
+                    <p class="textsearch">Search by topic</p>
+                    <img class="imgnav" src="./uploads/1024px-Search_Icon.svg.png" alt="Icon">
+                </div>
+                </div>
+            </div>
+            <div class="navchild">
+                <ul>
+                    <li class="navtext"> <a href="/aboutus">Why current view? </a></li>
+                <li><a href="./login"><button class="login">SIGN IN</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="bigcontainer" >
+        <div class="topic" >Breaking News</div>
+        <div class="main">
+            <div class="bigimage"> <% const newestArticle = articles[0]; %>
+                 <a href="/article/0"><img class="mainimage" src="<%= newestArticle.urlToImage %>" alt=" main image"> </a>
+               <div class="progressbar">
+                    <svg class="progressbar__svg">
+                        <circle cx="80" cy="80" r="40" class="progressbar__svg-circle circle-html shadow-html"> </circle>
+                    </svg>
+                    <span class="progressbar__text shadow-html">94%</span>
+                </div>
+            </div>
+            <div class="aligntext">
+            <div class="mainlabel">
+
+                <%= newestArticle.title %>
+            </div>
+
+             <div class="maintext">
+                     <p><%= newestArticle.description %></p>
+                     <a href="<%= newestArticle.url %>" target="_blank">Read more</a>
+                 </div>
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <h1>Latest News</h1>
+        </div>
+        <div class="container">
+
+            <div class="card"> <% const newsArticle1 = articles[1]; %>
+                <a href="/article/1"><img src="<%= newsArticle1.urlToImage %>" alt="image"> </a>
+                <p> <%= newsArticle1.publishedAt %></p>
+                <h2><%= newsArticle1.title %> </h2>
+            </div>
+            <div class="card"> <% const newsArticle2 = articles[2]; %>
+                <a href="/article/2"><img src="<%= newsArticle2.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle2.publishedAt %></p>
+                <h2><%= newsArticle2.title %> </h2>
+            </div>
+            <div class="card"> <% const newsArticle3 = articles[3]; %>
+                <a href="/article/3"><img src="<%= newsArticle3.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle3.publishedAt %></p>
+                <h2><%= newsArticle3.title %> </h2>
+            </div>
+            <div class="card"> <% const newsArticle4 = articles[4]; %>
+                <a href="/article/4"> <img src="<%= newsArticle4.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle4.publishedAt %></p>
+                <h2><%= newsArticle4.title %> </h2>
+            </div>
+            <div class="card"> <% const newsArticle5 = articles[5]; %>
+                <a href="/article/5"><img src="<%= newsArticle5.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle5.publishedAt %></p>
+                <h2><%= newsArticle5.title %> </h2>
+            </div>
+            <div class="card"><% const newsArticle6 = articles[6]; %>
+                <a href="/article/6"> <img src="<%= newsArticle6.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle6.publishedAt %></p>
+                <h2><%= newsArticle6.title %> </h2>
+            </div>
+            <div class="card"><% const newsArticle7 = articles[7]; %>
+                <a href="/article/7"><img src="<%= newsArticle7.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle7.publishedAt %></p>
+                <h2><%= newsArticle7.title %> </h2>
+            </div>
+            <div class="card"><% const newsArticle8 = articles[8]; %>
+                <a href="/article/8"><img src="<%= newsArticle8.urlToImage %>" alt="image"> </a>
+                <p>  <%= newsArticle8.publishedAt %></p>
+                <h2><%= newsArticle8.title %> </h2>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="footitems">Privacy Policy</div>
+        <div class="footitems">Terms of service</div>
+        <div class="footitems" id="lastitem">Personal Information</div>
+        <div class="footitems">Current View</div>
+    </div>
+
+</body>
+
+
+</html>
